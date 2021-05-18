@@ -3,7 +3,7 @@ class PhotosController < ApplicationController
     # Need to ensure set_xxxx is defined - found in private methods 
     before_action :set_photo, only: %i[ show edit update destroy ]
 
-    # Lists all instances of the class Xyz
+    # Lists all instances of the class 'Xyz'
     def index
         @photo = Photo.all
     end 
@@ -69,7 +69,7 @@ class PhotosController < ApplicationController
     # Get this info from db migration or schema file (or ERD)
     # Any arrays need to be listed at the end
     def photo_params
-        params.require(:photo).permit(:id, :title, :description, :price, :category, :style, :tags[])
+        params.require(:photo).permit(:title, :description, :price, :category, :style, :tags)
     end
 
 end

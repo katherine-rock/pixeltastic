@@ -18,8 +18,7 @@ ActiveRecord::Schema.define(version: 2021_05_18_040127) do
   create_table "photos", force: :cascade do |t|
     t.string "title", null: false
     t.text "description"
-    t.string "tags"
-    t.integer "price", null: false, array: true
+    t.integer "price", null: false
     t.string "category"
     t.string "style"
     t.datetime "created_at", precision: 6, null: false

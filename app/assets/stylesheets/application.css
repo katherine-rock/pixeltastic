@@ -14,19 +14,27 @@
  *= require_self
  */
 
- header {
+header {
      width: 100%;
      display: inline-flex;
      font-size: 3em;
      color: #FFD610;
      background-color: #2C0049;
- }
+}
 
- header img {
+header img {
     max-height: 200px;
- }
+}
 
- header h1 {
+header h1 {
      padding-left: 3em;
      margin-bottom: 0;
- }
+}
+
+label {
+    min-width: 30%;
+}
+
+.field {
+    padding: .5em;
+}
