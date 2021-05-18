@@ -1,46 +1,53 @@
-<ul class="nav justify-content-center">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <li class="nav-item">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+
+  <li class="navbar-brand">
     <%= link_to 'Home', home_page_path %>
   </li>
 
-  <li class="nav-item">
+  <li class="navbar-brand">
     <%= link_to 'View Image Catalogue', photos_path %>
   </li>
 
-  <li class="nav-item">
+  <li class="navbar-brand">
     <%= link_to 'Search', home_page_path %>
   </li>
 
-    <li class="nav-item">
+    <li class="navbar-brand">
     <%= link_to 'My Portfolio', home_page_path %>
   </li>
 
-    <li class="nav-item">
+    <li class="navbar-brand">
     <%= link_to 'Upload a New Photo', new_photo_path %>
   </li>
 
-    <li class="nav-item">
+    <li class="navbar-brand">
     <%= link_to 'Edit Profile', home_page_path %>
   </li>
 
-    <li class="nav-item">
+    <li class="navbar-brand">
     <%= link_to 'Shopping Cart', home_page_path %>
   </li>
 
-<li class="nav-item">
+<li class="navbar-brand">
     <%= link_to 'Log Out', home_page_path %>
   </li>
 
-<li class="nav-item">
-    <%= link_to 'Help', home_page_path %>
-  </li>
-
-  <li class="nav-item">
+  <li class="navbar-brand">
     <a href="#top">Top of Page</a>
   </li>
 
-  <li class="nav-item">
+  <li class="navbar-brand">
     <%= link_to 'Help', home_page_path %>
   </li>
 </ul>
+
+    </div>
+  </div>
+</nav>

@@ -13,8 +13,10 @@
 
   <body>
     <%= render 'shared/header' %>
-    <%= yield %>
-<%# May need to move navbar to individual pages unless I can get the formatting correct for the home page %>
+    <div class="container">
+      <%= yield %>
+      <%# May need to move navbar to individual pages unless I can get the formatting correct for the home page %>
+    </div>
     <%= render 'shared/navbar' %>
   </body>
 </html>

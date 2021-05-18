@@ -16,12 +16,15 @@
 
 @import "bootstrap"; 
 
+html {
+    margin-right: 0;
+}
+
 header {
-     width: 100%;
-     display: inline-flex;
-     font-size: 3em;
-     color: #FFD610;
-     background-color: #12001D;
+    width: 100%;
+    display: inline-flex;
+    background-color: #12001D;
+    margin: 0;
 }
 
 header img {
@@ -29,14 +32,19 @@ header img {
 }
 
 header h1 {
-     padding-left: 3em;
-     margin-bottom: 0;
+    color: #FFD610;
+    font-size: 6em;
+    padding: .3em 0em .2em 2em;
 }
 
 label {
-    min-width: 30%;
+    min-width: 10%;
 }
 
 .field {
+    padding: .5em;
+}
+
+.navbar a {
     padding: .5em;
 }
