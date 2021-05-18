@@ -45,6 +45,18 @@ label {
     padding: .5em;
 }
 
-.navbar a {
-    padding: .5em;
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+nav a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: #470076;
+    border: #470076;
 }
