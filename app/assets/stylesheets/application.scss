@@ -72,6 +72,15 @@ nav a:visited a:link {
 }
 
 // Set maximum width of images on index page 
-.table img {
-    max-width: 200px;
+.card img {
+    max-width: 18rem;
+}
+
+.card {
+    margin: 1em;
+}
+
+.card_catalogue {
+    display: flexbox;
+    flex-wrap: wrap;
 }

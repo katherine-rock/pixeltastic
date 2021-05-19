@@ -2,37 +2,24 @@
 
 <h1>Image Catalogue</h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Image</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Category</th>      
-      <th>Style</th>
-      <th colspan="6"></th>
-    </tr>
-  </thead>
+<section class="card_catalogue">
+  <% @photos.each do | photo | %> 
+  <div class="card" style="width: 18rem;">
+    <div class=”card-img-top”>
+      <%= image_tag photo.image %>
+      </div>
+      <div class="card-body">
+        <strong>Title: </strong><%= photo.title %>
+        <br>
+        <strong>Category: </strong><%= photo.category %>
+        <br>
+        <strong>Price: $</strong><%= photo.price %>
+        <br>
+      <button type="button" class="btn btn-primary">
+        <%= link_to 'Learn More', photo %>
+      </button>
+    </div>
+  </div>
+</section>
 
-  <tbody>
-    <% @photos.each do |photo| %>
-      <tr>
-        <td><%= photo.title %></td>
-        <td><%= image_tag photo.image %></td>
-        <td><%= photo.description %></td>
-        <td><%= photo.price %></td>
-        <td><%= photo.category %>
-        <td><%= photo.style %>
-        <td><%= link_to 'Show', photo %></td>
-        <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
-        <td><%= link_to 'Delete', photo, method: :delete, data: { confirm: 'Are you sure? This action is permanent.' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-
-
-</table>
-
-<br>
-
+<% end %>
