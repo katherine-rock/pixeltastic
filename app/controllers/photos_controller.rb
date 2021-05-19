@@ -69,7 +69,7 @@ class PhotosController < ApplicationController
     # Get this info from db migration or schema file (or ERD)
     # Any arrays need to be listed at the end
     def photo_params
-        params.require(:photo).permit(:title, :description, :price, :category, :style, :tags)
+        params.require(:photo).permit(:title, :description, :price, :category, :style, :image)
     end
 
 end

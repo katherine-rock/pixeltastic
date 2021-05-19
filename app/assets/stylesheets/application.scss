@@ -51,12 +51,17 @@ nav {
     flex-wrap: wrap;
 }
 
-nav a:visited {
+nav a:visited a:link {
     color: white;
     text-decoration: none;
 }
+
+.btn-primary:hover {
+    background-color: #DCA7FA;
+  }
 
 .btn-primary {
     background-color: #470076;
     border: #470076;
 }
+
