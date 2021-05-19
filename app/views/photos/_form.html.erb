@@ -15,7 +15,7 @@ may want to include sample text in input fields %>
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label :title %><%= "*"%>
     <%= form.text_field :title %>
   </div>
 
@@ -25,8 +25,8 @@ may want to include sample text in input fields %>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price, in: 1.0..99999.0, step: 0.1 %>
+    <%= form.label :price %><%= "*"%>
+    <%= form.number_field :price, in: 1.0..99999.0 %>
   </div>
 
   <div class="field">
@@ -40,7 +40,7 @@ may want to include sample text in input fields %>
   </div>
 
   <div class="field">
-    <%= form.label :image %>
+    <%= form.label :image %><%= "*"%>
     <%= form.file_field :image, accept: 'image/png, image/jpg, image/jpeg, image/webp' %>
   </div>
 

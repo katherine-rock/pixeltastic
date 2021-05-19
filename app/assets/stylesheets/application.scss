@@ -16,29 +16,32 @@
 
 @import "bootstrap"; 
 
-html {
+html, body {
     margin-right: 0;
 }
 
 header {
     width: 100%;
-    display: inline-flex;
+    display: flexbox;
+    flex-direction: column;
     background-color: #12001D;
     margin: 0;
+    text-align: center;
 }
 
 header img {
     max-height: 200px;
+    // float: left;
 }
 
 header h1 {
     color: #FFD610;
-    font-size: 6em;
-    padding: .3em 0em .2em 2em;
+    font-size: 3em;
+    padding: 0em 0em .2em 0em;
 }
 
-label {
-    min-width: 10%;
+.text_field, textarea, input {
+    min-width: 100%;
 }
 
 .field {
@@ -49,6 +52,8 @@ nav {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    flex-direction: column;
+    width: 60%;
 }
 
 nav a:visited a:link {
@@ -63,6 +68,7 @@ nav a:visited a:link {
 .btn-primary {
     background-color: #470076;
     border: #470076;
+    margin: .5em;
 }
 
 // Set maximum width of images on index page 
