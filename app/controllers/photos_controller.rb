@@ -5,7 +5,7 @@ class PhotosController < ApplicationController
 
     # Lists all instances of the class 'Xyz'
     def index
-        @photo = Photo.all
+        @photos = Photo.all
     end 
 
     # Need to include although there is no method defined - needed for view to retrieve form???
