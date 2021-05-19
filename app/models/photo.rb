@@ -1,4 +1,4 @@
 class Photo < ApplicationRecord
     validates :title, presence: true
-    has_one :image
+    has_one_attached :image
 end
