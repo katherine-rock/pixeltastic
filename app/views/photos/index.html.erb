@@ -6,11 +6,12 @@
   <thead>
     <tr>
       <th>Title</th>
+      <th>Image</th>
       <th>Description</th>
       <th>Price</th>
       <th>Category</th>      
       <th>Style</th>
-      <th colspan="5"></th>
+      <th colspan="6"></th>
     </tr>
   </thead>
 
@@ -18,13 +19,14 @@
     <% @photos.each do |photo| %>
       <tr>
         <td><%= photo.title %></td>
+        <td><%= image_tag photo.image %></td>
         <td><%= photo.description %></td>
         <td><%= photo.price %></td>
         <td><%= photo.category %>
         <td><%= photo.style %>
         <td><%= link_to 'Show', photo %></td>
         <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
-        <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', photo, method: :delete, data: { confirm: 'Are you sure? This action is permanent.' } %></td>
       </tr>
     <% end %>
   </tbody>
