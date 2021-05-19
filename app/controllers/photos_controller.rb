@@ -2,6 +2,7 @@ class PhotosController < ApplicationController
     # Replace xxxx with model name, lowercase to retrieve record to show, edit or delete
     # Need to ensure set_xxxx is defined - found in private methods 
     before_action :set_photo, only: %i[ show edit update destroy ]
+    before_action :authenticate_user!, only: %i[ new create edit update destroy ]
 
     # Lists all instances of the class 'Xyz'
     def index
