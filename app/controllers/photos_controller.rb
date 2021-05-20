@@ -9,21 +9,26 @@ class PhotosController < ApplicationController
         @photos = Photo.all
     end 
 
-    # Need to include although there is no method defined - needed for view to retrieve form???
+    # Need to include although there is no method defined - needed for view to retrieve form    
     def show
     end
 
     def edit
     end
 
+    def portfolio
+    end
+
     # To create new instance of the model
     def new
-        @photo = Photo.new
+        @photo = Photo.new 
     end
 
     # Create method creates new instance, saves it and informs user
     def create
-        @photo = Photo.new(photo_params)
+        # raise params.inspect 
+        @photo = current_user.photos.build(photo_params)
+        # @photo = Photo.new(photo_params)
 
         respond_to do |format|
         if @photo.save
@@ -70,7 +75,7 @@ class PhotosController < ApplicationController
     # Get this info from db migration or schema file (or ERD)
     # Any arrays need to be listed at the end
     def photo_params
-        params.require(:photo).permit(:title, :description, :price, :category, :style, :image)
+        params.require(:photo).permit(:title, :description, :price, :category, :style, :image, :id, :user_id)
     end
 
 end

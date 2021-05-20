@@ -1,0 +1,21 @@
+<h1>Portfolio</h1>
+
+<% if !user_signed_in? %>
+    <p>You need to be logged in to view your portfolio. Please log in or sign up below.</p>
+    <button type="button" class="btn btn-primary">
+        <%= link_to 'Log In', new_user_session_path %>
+    </button>
+
+    <button type="button" class="btn btn-primary">
+    <%= link_to 'Sign Up', new_user_registration_path %>
+    </button>
+
+<% end %>  
+
+<% if user_signed_in? %>
+    <p>There are currently no photos in your portfolio. Please follow the link below to start adding photos.</p>
+    <button type="button" class="btn btn-primary">
+    <%= link_to 'Upload a New Photo', new_photo_path %>
+    </button>
+<% end %>  
+ 
