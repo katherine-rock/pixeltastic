@@ -7,3 +7,13 @@
         <h1>Pixeltastic</h1>
     </div>
 </header>
+
+<br>
+
+<section class="log_status">
+    <% if user_signed_in? %>
+        <p>Currently signed in as:&nbsp;</p><%= current_user.email %>
+    <% else %>
+        <p>You are currently visiting as a guest.</p>
+    <% end %>
+</section>
