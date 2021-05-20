@@ -3,7 +3,12 @@ class PhotosController < ApplicationController
     # Need to ensure set_xxxx is defined - found in private methods 
     before_action :set_photo, only: %i[ show edit update destroy ]
     before_action :authenticate_user!, only: %i[ new create edit update destroy ]
+    rescue_from Pundit::NotAuthorizedError, with: :unauthorised 
 
+    def unauthorised
+        flash[:alert] = "Sorry! You do not have permission to do that."
+        redirect_to photos_path
+    end
     # Lists all instances of the class 'Xyz'
     def index
         @photos = Photo.all
@@ -14,6 +19,7 @@ class PhotosController < ApplicationController
     end
 
     def edit
+        authorize @photo
     end
 
     def portfolio
@@ -22,7 +28,6 @@ class PhotosController < ApplicationController
     # To create new instance of the model
     def new
         @photo = Photo.new 
-        # @user_id = current_user.id
     end
 
     # Create method creates new instance, saves it and informs user
