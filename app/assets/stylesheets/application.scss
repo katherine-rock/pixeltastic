@@ -17,7 +17,7 @@
 @import "bootstrap"; 
 
 html, body {
-    margin-right: 0;
+    margin: 0;
 }
 
 header {
@@ -50,13 +50,14 @@ header h1 {
 
 nav {
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     flex-direction: column;
     width: 60%;
+    margin: 1em;
+    align-items: stretch;
 }
 
-nav a:visited a:link {
+button a:visited, a:link {
     color: white;
     text-decoration: none;
 }
@@ -65,7 +66,7 @@ nav a:visited a:link {
     background-color: #DCA7FA;
   }
 
-.btn-primary {
+nav .btn-primary {
     background-color: #470076;
     border: #470076;
     margin: .5em;
@@ -83,4 +84,16 @@ nav a:visited a:link {
 .card_catalogue {
     display: flexbox;
     flex-wrap: wrap;
+}
+
+.field input, .field textarea {
+    background-color: #FFFAE1;
+}
+
+.field textarea {
+    border: solid 2px #212529;
+}
+
+.form-group input {
+    background-color: #FFFAE1;
 }

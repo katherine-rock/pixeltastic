@@ -1,9 +1,13 @@
+<main>
 <p id="notice"><%= notice %></p>
 
 <h1>
-  <strong>Title:</strong>
   <%= @photo.title %>
 </h1>
+
+<p>
+  <%= image_tag @photo.image %>
+</p> 
 
 <p>
   <strong>Description:</strong>
@@ -25,13 +29,15 @@
   <%= @photo.style %>
 </p>
 
-<%# <p>
-  <%= image_tag @photo.image %>
-<%# </p> %> 
-
 <br>
 
-<%= link_to 'Edit', edit_photo_path(@photo) %> |
-<%= link_to 'Back', photos_path %>
+<button type="button" class="btn btn-info">
+  <%= link_to 'Edit', edit_photo_path(@photo) %>
+</button>
+
+<button type="button" class="btn btn-info">
+  <%= link_to 'Back', photos_path %>
+</button>
 
 <br>
+</main>
