@@ -22,7 +22,12 @@
       <button type="button" class="btn btn-primary">
         <%= link_to 'Learn More', photo %>
       </button>
+
+      <button type="button" class="btn btn-primary">
+        <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure? This action is permanent.' } %>
+      </button>
     </div>
+
   </div>
 </section>
 

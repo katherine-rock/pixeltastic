@@ -6,7 +6,7 @@ class PhotosController < ApplicationController
     rescue_from Pundit::NotAuthorizedError, with: :unauthorised 
 
     def unauthorised
-        flash[:alert] = "Sorry! You do not have access to do that. If you believe this is an error, please report the issue via the help page"
+        flash[:alert] = "Sorry! You do not have access to do that. If you believe this is an error, please report the issue via the help page."
         redirect_to photos_path
     end
     # Lists all instances of the class 'Xyz'
@@ -50,7 +50,7 @@ class PhotosController < ApplicationController
     def update
         respond_to do |format|
             if @photo.update(photo_params)
-            format.html { redirect_to @photo, notice: "Photo was successfully updated." }
+            format.html { redirect_to @photo, notice: "Photo listing has been successfully updated." }
             format.json { render :show, status: :ok, location: @photo }
             else
             format.html { render :edit, status: :unprocessable_entity }
@@ -61,9 +61,10 @@ class PhotosController < ApplicationController
 
     # To delete an instance of the class or model photo
     def destroy
+        authorize @photo
         @photo.destroy
         respond_to do |format|
-            format.html { redirect_to photo_url, notice: "Photo was successfully destroyed." }
+            format.html { redirect_to photos_url, notice: "Photo listing has been successfully deleted." }
             format.json { head :no_content }
         end
     end
