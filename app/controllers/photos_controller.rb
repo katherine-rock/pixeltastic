@@ -22,13 +22,13 @@ class PhotosController < ApplicationController
     # To create new instance of the model
     def new
         @photo = Photo.new 
+        # @user_id = current_user.id
     end
 
     # Create method creates new instance, saves it and informs user
     def create
-        # raise params.inspect 
-        @photo = current_user.photos.build(photo_params)
-        # @photo = Photo.new(photo_params)
+        # raise params.inspect
+        @photo = Photo.new(photo_params)
 
         respond_to do |format|
         if @photo.save
@@ -75,7 +75,7 @@ class PhotosController < ApplicationController
     # Get this info from db migration or schema file (or ERD)
     # Any arrays need to be listed at the end
     def photo_params
-        params.require(:photo).permit(:title, :description, :price, :category, :style, :image, :id, :user_id)
+        params.require(:photo).permit(:title, :description, :price, :category, :style, :image).merge(user_id: current_user.id)
     end
 
 end

@@ -11,7 +11,11 @@
       <div class="card-body">
         <strong>Title: </strong><%= photo.title %>
         <br>
+        <% if photo.category? %>
         <strong>Category: </strong><%= photo.category %>
+        <% else %>
+        <&nbsp;;>
+        <% end %>
         <br>
         <strong>Price: $</strong><%= photo.price %>
         <br>
