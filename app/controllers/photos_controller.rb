@@ -6,7 +6,7 @@ class PhotosController < ApplicationController
     rescue_from Pundit::NotAuthorizedError, with: :unauthorised 
 
     def unauthorised
-        flash[:alert] = "Sorry! You do not have permission to do that."
+        flash[:alert] = "Sorry! You do not have access to do that. If you believe this is an error, please report the issue via the help page"
         redirect_to photos_path
     end
     # Lists all instances of the class 'Xyz'
