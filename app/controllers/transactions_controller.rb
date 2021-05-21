@@ -8,33 +8,13 @@ class TransactionsController < ApplicationController
             line_items: [
                {
                 price_data: {
-                    unit_amount: 1000,
+                    unit_amount: photo.price*100,
                     currency: 'aud',
                     product_data: {
-                        name: 'Stubborn 1',
+                        name: photo.title
                     },
                 },
                 quantity: 1,
-            },
-            {
-                price_data: {
-                    unit_amount: 3000,
-                    currency: 'aud',
-                    product_data: {
-                        name: 'Stubborn 2',
-                    },
-                },
-                quantity: 2,
-            },
-                {
-                price_data: {
-                    unit_amount: 3000,
-                    currency: 'aud',
-                    product_data: {
-                        name: 'Stubborn 3',
-                    },
-                },
-                quantity: 3,
             }],
             mode: 'payment',
             success_url: checkout_success_url,
