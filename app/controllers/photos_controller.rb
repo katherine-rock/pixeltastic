@@ -24,6 +24,10 @@ class PhotosController < ApplicationController
     end
 
     def portfolio
+        if user_signed_in?
+        @portfolio = Photo.where(user_id: current_user.id)
+        else 
+        end
     end
 
     # To create new instance of the model

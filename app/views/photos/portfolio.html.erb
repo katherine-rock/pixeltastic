@@ -10,11 +10,46 @@
     <%= link_to 'Sign Up', new_user_registration_path %>
     </button>
 
-<% end %>  
+    <% else %>  
 
-<% if user_signed_in? %>
-    <p>There are currently no photos in your portfolio. Please follow the link below to start adding photos.</p>
+    <section class="card_catalogue">
+    <% @portfolio.each do | photo | %> 
+    <div class="card" style="width: 18rem;">
+        <div class=”card-img-top”>
+        <%= image_tag photo.image %>
+        </div>
+        <div class="card-body">
+            <strong>Title: </strong><%= photo.title %>
+            <br>
+            <% if photo.category? %>
+            <strong>Category: </strong><%= photo.category %>
+            <% else %>
+            <&nbsp;;>
+            <% end %>
+            <br>
+            <strong>Price: $</strong><%= photo.price %>
+            <br>
+        <button type="button" class="btn btn-primary">
+            <%= link_to 'Learn More', photo %>
+        </button>
+
+        <button type="button" class="btn btn-primary">
+            <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure? This action is permanent.' } %>
+        </button>
+        </div>
+
+    </div>
+    </section>
+
+    <% end %>
+
+
+<%# <% elsif user_signed_in? && !current_user.photos %>  
+
+    <%# <p>There are currently no photos in your portfolio. Please follow the link below to start adding photos.</p>
     <button type="button" class="btn btn-primary">
     <%= link_to 'Upload a New Photo', new_photo_path %>
-    </button>
-<% end %>  
+    <%# </button> %> 
+
+
+<% end %>
