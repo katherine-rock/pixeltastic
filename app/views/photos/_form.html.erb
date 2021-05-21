@@ -26,7 +26,7 @@ may want to include sample text in input fields %>
 
   <div class="field">
     <%= form.label :price %><%= "*"%>
-    <%= form.number_field :price, in: 1.0..99999.0 %>
+    <%= form.number_field :price, in: 1..99999 %>
   </div>
 
   <div class="field">

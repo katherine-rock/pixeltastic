@@ -10,10 +10,11 @@ class PhotosController < ApplicationController
         redirect_to photos_path
     end
     # Lists all instances of the class 'Xyz'
+    # Added query to display most recently added photos first 
     def index
-        @photos = Photo.all
+        @photos = Photo.all.order(:created_at).reverse_order
     end 
-
+ 
     # Need to include although there is no method defined - needed for view to retrieve form    
     def show
     end
