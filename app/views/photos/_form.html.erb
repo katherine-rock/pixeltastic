@@ -15,6 +15,11 @@ may want to include sample text in input fields %>
   <% end %>
 
   <div class="field">
+    <%= form.label :image %><%= "*"%>
+    <%= form.file_field :image, accept: 'image/png, image/jpg, image/jpeg, image/webp' %>
+  </div>
+
+  <div class="field">
     <%= form.label :title %><%= "*"%>
     <%= form.text_field :title %>
   </div>
@@ -37,11 +42,6 @@ may want to include sample text in input fields %>
   <div class="field">
     <%= form.label :style %>
     <%= form.text_field :style %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image %><%= "*"%>
-    <%= form.file_field :image, accept: 'image/png, image/jpg, image/jpeg, image/webp' %>
   </div>
 
   <br>

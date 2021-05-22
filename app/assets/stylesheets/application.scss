@@ -15,10 +15,14 @@
  */
 
 @import "bootstrap"; 
+    
+// generic page formatting  
 
 html, body {
     margin: 0;
 }
+
+// header text and image
 
 header {
     width: 100%;
@@ -40,6 +44,34 @@ header h1 {
     padding: 0em 0em .2em 0em;
 }
 
+// display of user email at top of page
+.log_status {
+    margin: 0 2em;
+    float: right;
+    margin-bottom: .5em;
+}
+
+.log_status p {
+    margin: 0;
+}
+
+// welcome message on home page
+.welcome {
+    margin: 2em;
+}
+
+.main {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    max-width: max-content;
+    justify-content: center;
+}
+
+
 .text_field, textarea, input {
     min-width: 100%;
 }
@@ -53,7 +85,7 @@ nav {
     // flex-wrap: wrap;
     flex-direction: column;
     // width: 60%;
-    margin: 4em;
+    margin: 2em 4em;
     align-items: stretch;
 }
 
@@ -81,11 +113,6 @@ nav .btn-primary {
     margin: 1em;
 }
 
-.card_catalogue {
-    display: flexbox;
-    flex-wrap: wrap;
-}
-
 .field input, .field textarea {
     background-color: #FFFAE1;
 }
@@ -98,8 +125,49 @@ nav .btn-primary {
     background-color: #FFFAE1;
 }
 
-.log_status {
-    float: right;
-    margin-right: 2em;
-    display: inline-flex;
-}
+// mobile devices 
+@media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+  }
+
+// tablets and ipads  
+@media only screen and (min-width: 600px) {
+    body {
+      background-color: palegoldenrod;
+    }
+    .header_image {
+        float: left;
+        align-content: center;
+    }
+    .header_text {
+        font-size: 2rem;
+    }
+    .main {
+        margin: 1em;
+    }
+
+    .log_status {
+        float: right;
+        margin: 0 2em;
+        display: inline-flex;
+    }
+
+    .card {
+        margin: 2em;
+    }
+  }  
+
+// Set formatting for desktop screen sizes  
+  @media only screen and (min-width: 1200px) {
+    body {
+      background-color: pink;
+    }
+    .main {
+        margin: 3em;
+    }
+    .card {
+        margin: 4em;
+    }
+  }
