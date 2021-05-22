@@ -22,15 +22,20 @@ html, body {
     margin: 0;
 }
 
+.btn-info {
+    color: white;
+}
+
 // header text and image
 
 header {
     width: 100%;
-    display: flexbox;
+    display: flex;
     flex-direction: column;
     background-color: #12001D;
     margin: 0;
     text-align: center;
+    align-content: center;
 }
 
 header img {
@@ -56,7 +61,7 @@ header h1 {
 }
 
 // welcome message on home page
-.welcome, .help_text {
+.welcome, .help_text, .portfolio_text {
     margin: 1em 2em;
 }
 
@@ -81,6 +86,7 @@ header h1 {
     align-self: center;
     margin: auto;
     justify-content: center;
+    color: white;
 }
 
 // Image upload form 
@@ -88,7 +94,7 @@ header h1 {
 .text_field, textarea, input {
     min-width: 100%;
 }
-.upload_form, .signup_form, .login_form {
+.upload_form, .signup_form, .login_form, .show_page {
     margin: 2% 5%;
 }
 .upload_button {
@@ -105,9 +111,7 @@ header h1 {
 
 nav {
     display: flex;
-    // flex-wrap: wrap;
     flex-direction: column;
-    // width: 60%;
     margin: 2em 4em;
     align-items: stretch;
 }
@@ -148,17 +152,22 @@ nav .btn-primary {
     background-color: #FFFAE1;
 }
 
+.show_page img {
+    max-width: 100%;
+}
+
 // mobile devices 
 @media only screen and (max-width: 600px) {
-    body {
 
-    }
   }
 
 // tablets and ipads  
 @media only screen and (min-width: 600px) {
     body {
  
+    }
+    header {
+        display: inline-flex;
     }
     .header_image {
         float: left;
@@ -189,6 +198,18 @@ nav .btn-primary {
         margin: 0 20%;
     }
 
+    nav {
+        display: flex;
+        flex-direction: row;
+        margin: 2em 4em;
+        justify-content: space-evenly;
+        text-align: center;
+        align-content: center;
+    }
+
+    img {
+        max-width: 60%;
+    }
   }  
 
 // Set formatting for desktop screen sizes  
@@ -203,5 +224,9 @@ nav .btn-primary {
 
     .welcome, .help_text {
         margin: 1em 8em;
+    }
+
+    .show_page {
+        margin: 0 20%;
     }
   }

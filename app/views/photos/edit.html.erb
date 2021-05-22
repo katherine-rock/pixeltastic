@@ -1,11 +1,13 @@
-<h1>Edit Your Photo</h1>
+<h1 class="page_title">Edit Your Photo</h1>
 
 <%= render 'form', photo: @photo %>
 
-<button type="button" class="btn btn-info">
-    <%= link_to 'Show', @photo %> 
-</button >
+<section class="grouped_buttons">
+    <button type="button" class="btn btn-info">
+        <%= link_to 'Show', @photo %> 
+    </button >
 
-<button type="button" class="btn btn-info">
-    <%= link_to 'Back', photos_path %> 
-</button>
+    <button type="button" class="btn btn-info">
+        <%= link_to 'Back', photos_path %> 
+    </button>
+</section>

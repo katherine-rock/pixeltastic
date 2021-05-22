@@ -1,5 +1,6 @@
 <h1 class="page_title">Portfolio</h1>
 
+<section class="portfolio_text">
 <% if !user_signed_in? %>
     <p>You need to be logged in to view your portfolio. Please log in or sign up below.</p>
     <button type="button" class="btn btn-primary">
@@ -33,7 +34,7 @@
         </button>
 
   <% if photo.user_id == current_user.id %>
-    <button type="button" class="btn btn-info">
+    <button type="button" class="btn btn-primary">
       <%= link_to 'Edit', edit_photo_path(photo) %>
     </button>
   <% end %>

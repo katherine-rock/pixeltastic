@@ -1,52 +1,54 @@
-<main>
-<p id="notice"><%= notice %></p>
+<section class="show_page">
+  <main>
+  <p id="notice"><%= notice %></p>
 
-<h1>
-  <%= @photo.title %>
-</h1>
+  <h1>
+    <%= @photo.title %>
+  </h1>
 
-<p>
-  <%= image_tag @photo.image %>
-</p> 
+  <p>
+    <%= image_tag @photo.image %>
+  </p> 
 
-<p>
-  <strong>Description:</strong>
-  <%= @photo.description %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @photo.description %>
+  </p>
 
-<p>
-  <strong>Price: $</strong>
-  <%= @photo.price %>
-</p>
+  <p>
+    <strong>Price: $</strong>
+    <%= @photo.price %>
+  </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @photo.category %>
-</p>
+  <p>
+    <strong>Category:</strong>
+    <%= @photo.category %>
+  </p>
 
-<p>
-  <strong>Style:</strong>
-  <%= @photo.style %>
-</p>
+  <p>
+    <strong>Style:</strong>
+    <%= @photo.style %>
+  </p>
 
-<br>
+  <br>
 
-<button type="button" id="checkout-button">Checkout</button>
+    <button type="button" id="checkout-button" class="btn btn-info">Checkout</button>
 
-<% if user_signed_in? %>
-  <% if @photo.user_id == current_user.id %>
-    <button type="button" class="btn btn-info">
-      <%= link_to 'Edit', edit_photo_path(@photo) %>
-    </button>
+  <% if user_signed_in? %>
+    <% if @photo.user_id == current_user.id %>
+      <button type="button" class="btn btn-info">
+        <%= link_to 'Edit', edit_photo_path(@photo) %>
+      </button>
+    <% end %>
   <% end %>
-<% end %>
 
-<%# Original back button which goes to image catalogue/index %>
-<button type="button" class="btn btn-info">
-  <%= link_to 'Back', photos_path %>
-</button>
+  <%# Original back button which goes to image catalogue/index %>
+  <button type="button" class="btn btn-info">
+    <%= link_to 'Back', photos_path %>
+  </button>
 
-<br>
+  <br>
+</section>
 
 <script type="text/javascript">
   // Create an instance of the Stripe object with your publishable API key
