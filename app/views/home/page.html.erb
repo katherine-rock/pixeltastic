@@ -5,6 +5,7 @@
 
 <h2>Welcome to Pixeltastic!</h2>
 <p>An easy to use, stock photography website for creative photographers to sell their photos.</p>
+<p>Here are the latest additions to our collection.</p>
 
 <section class="card_catalogue">
     <% @photos.each do | photo | %> 
@@ -27,12 +28,13 @@
             <%= link_to 'Learn More', photo %>
         </button>
 
-        <button type="button" class="btn btn-primary">
-            <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure? This action is permanent.' } %>
-        </button>
         </div>
 
     </div>
     </section>
 
     <% end %>
+
+    <button type="button" class="btn btn-primary">
+      <%= link_to 'View More Photos', photos_path %>
+    </button>

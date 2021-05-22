@@ -23,9 +23,14 @@
         <%= link_to 'Learn More', photo %>
       </button>
 
-      <button type="button" class="btn btn-primary">
-        <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure? This action is permanent.' } %>
-      </button>
+<% if user_signed_in? %>
+  <% if photo.user_id == current_user.id %>
+        <button type="button" class="btn btn-primary">
+          <%= link_to 'Delete', photo, method: :delete, data: { confirm: 'Are you sure? This action is permanent.' } %>
+        </button>
+  <% end %>
+<% end %>
+
     </div>
 
   </div>

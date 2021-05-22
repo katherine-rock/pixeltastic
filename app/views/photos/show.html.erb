@@ -33,9 +33,13 @@
 
 <button type="button" id="checkout-button">Checkout</button>
 
-<button type="button" class="btn btn-info">
-  <%= link_to 'Edit', edit_photo_path(@photo) %>
-</button>
+<% if user_signed_in? %>
+  <% if @photo.user_id == current_user.id %>
+    <button type="button" class="btn btn-info">
+      <%= link_to 'Edit', edit_photo_path(@photo) %>
+    </button>
+  <% end %>
+<% end %>
 
 <button type="button" class="btn btn-info">
   <%= link_to 'Back', photos_path %>

@@ -4,6 +4,3 @@ class HomeController < ApplicationController
     @photos = Photo.all.order(:created_at).reverse_order.limit(6)
   end
 end
-
-
-  # This page needs a method page even if it is empty
