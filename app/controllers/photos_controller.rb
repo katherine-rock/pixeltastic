@@ -23,11 +23,17 @@ class PhotosController < ApplicationController
         authorize @photo
     end
 
+    # Query to only display photos uploaded by the current user for their portfolio
     def portfolio
         if user_signed_in?
         @portfolio = Photo.where(user_id: current_user.id)
         else 
         end
+    end
+
+    # Query to select the most recent 6 photos for display on home page
+    def page
+        @photos = Photo.all.order(:created_at).reverse_order.limit(6)
     end
 
     # To create new instance of the model
