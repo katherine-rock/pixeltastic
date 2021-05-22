@@ -1,27 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Image Catalogue</h1>
+<h1 class="page_title">Image Catalogue</h1>
 
-<section class="card_catalogue">
-  <% @photos.each do | photo | %> 
-  <div class="card" style="width: 18rem;">
-    <div class=”card-img-top”>
-      <%= image_tag photo.image %>
-      </div>
-      <div class="card-body">
-        <strong>Title: </strong><%= photo.title %>
-        <br>
-        <% if photo.category? %>
-        <strong>Category: </strong><%= photo.category %>
-        <% else %>
-        <&nbsp;;>
-        <% end %>
-        <br>
-        <strong>Price: $</strong><%= photo.price %>
-        <br>
-      <button type="button" class="btn btn-primary">
-        <%= link_to 'Learn More', photo %>
-      </button>
+<section class="main">
+    <div class="row">
+      <% @photos.each do | photo | %> 
+      <div class="card" style="width: 18rem;">
+          <%= image_tag photo.image, class: "card-img-top" %>
+
+          <div class="card-body">
+            <strong>Title: </strong><%= photo.title %>
+            <br>
+            <% if photo.category? %>
+            <strong>Category: </strong><%= photo.category %>
+            <% else %>
+            <&nbsp;;>
+            <% end %>
+            <br>
+            <strong>Price: $</strong><%= photo.price %>
+            <br>
+
+          <button type="button" class="btn btn-primary">
+            <%= link_to 'Learn More', photo %>
+          </button>
 
 <% if user_signed_in? %>
   <% if photo.user_id == current_user.id %>
@@ -36,9 +37,10 @@
 <% end %>
 
     </div>
-
-  </div>
-</section>
+    </div>
+    </div>
 
 <% end %>
 
+  </div>
+</section>

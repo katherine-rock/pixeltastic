@@ -57,7 +57,7 @@ header h1 {
 
 // welcome message on home page
 .welcome {
-    margin: 2em;
+    margin: 1em 2em;
 }
 
 .main {
@@ -71,6 +71,9 @@ header h1 {
     justify-content: center;
 }
 
+.page_title {
+    text-align: center;
+}
 
 .text_field, textarea, input {
     min-width: 100%;
@@ -145,7 +148,7 @@ nav .btn-primary {
         font-size: 2rem;
     }
     .main {
-        margin: 1em;
+        margin: 0 1em;
     }
 
     .log_status {
@@ -155,7 +158,11 @@ nav .btn-primary {
     }
 
     .card {
-        margin: 2em;
+        margin: 1em 2em;
+    }
+
+    .welcome {
+        margin: 1em 4em;
     }
   }  
 
@@ -165,9 +172,9 @@ nav .btn-primary {
       background-color: pink;
     }
     .main {
-        margin: 3em;
+        margin: 0 3em;
     }
     .card {
-        margin: 4em;
+        margin: 2em 4em;
     }
   }
