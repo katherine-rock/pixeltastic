@@ -8,19 +8,11 @@
   </button>
 
   <button type="button" class="btn btn-primary">
-      <%= link_to 'Search', home_page_path %>
-  </button>
-
-  <button type="button" class="btn btn-primary">
       <%= link_to 'My Portfolio', portfolio_path %>
   </button>
 
   <button type="button" class="btn btn-primary">
       <%= link_to 'Upload a New Photo', new_photo_path %>
-  </button>
-
-  <button type="button" class="btn btn-primary">
-      <%= link_to 'Shopping Cart', home_page_path %>
   </button>
 
     <% if user_signed_in? %>
