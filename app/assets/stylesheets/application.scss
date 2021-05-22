@@ -56,7 +56,7 @@ header h1 {
 }
 
 // welcome message on home page
-.welcome {
+.welcome, .help_text {
     margin: 1em 2em;
 }
 
@@ -75,8 +75,28 @@ header h1 {
     text-align: center;
 }
 
+// button to view more photos on home screen - links to index
+.button_view_all, .upload_button, .back_button {
+    display: flex;
+    align-self: center;
+    margin: auto;
+    justify-content: center;
+}
+
+// Image upload form 
+
 .text_field, textarea, input {
     min-width: 100%;
+}
+.upload_form, .signup_form, .login_form {
+    margin: 2% 5%;
+}
+.upload_button {
+    max-width: max-content;
+}
+
+.help_link {
+    color: navy;
 }
 
 .field {
@@ -131,14 +151,14 @@ nav .btn-primary {
 // mobile devices 
 @media only screen and (max-width: 600px) {
     body {
-      background-color: lightblue;
+
     }
   }
 
 // tablets and ipads  
 @media only screen and (min-width: 600px) {
     body {
-      background-color: palegoldenrod;
+ 
     }
     .header_image {
         float: left;
@@ -161,20 +181,27 @@ nav .btn-primary {
         margin: 1em 2em;
     }
 
-    .welcome {
+    .welcome, .help_text {
         margin: 1em 4em;
     }
+
+    .upload_form, .signup_form, .login_form {
+        margin: 0 20%;
+    }
+
   }  
 
 // Set formatting for desktop screen sizes  
   @media only screen and (min-width: 1200px) {
-    body {
-      background-color: pink;
-    }
+
     .main {
         margin: 0 3em;
     }
     .card {
         margin: 2em 4em;
+    }
+
+    .welcome, .help_text {
+        margin: 1em 8em;
     }
   }

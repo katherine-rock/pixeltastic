@@ -5,7 +5,6 @@
 </section>
 
 <section class="main">
-    <div class="row">
         <% @photos.each do | photo | %>
             <div class="card" style="width: 18rem;">
             <%= image_tag photo.image, class: "card-img-top" %>
@@ -27,7 +26,6 @@
             </button>
 
                 </div>
-        </div>
 
     </div>  
     <% end %>  
@@ -35,7 +33,7 @@
 
 </section>
 
-<div class="center">
+<div class="button_view_all">
     <button type="button" class="btn btn-primary">
     <%= link_to 'View More Photos', photos_path %>
     </button>

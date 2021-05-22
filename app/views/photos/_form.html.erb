@@ -1,55 +1,58 @@
 <%# could possibly replace this with simple form but may not be worthwhile
 may want to include sample text in input fields %>
 
-<%= form_with(model: photo) do |form| %>
-  <% if photo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
+<section class="upload_form">
+  <%= form_with(model: photo) do |form| %>
+    <% if photo.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
 
-      <ul>
-        <% photo.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% photo.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :image %><%= "*"%>
+      <%= form.file_field :image, accept: 'image/png, image/jpg, image/jpeg, image/webp' %>
     </div>
+
+    <div class="field">
+      <%= form.label :title %><%= "*"%>
+      <%= form.text_field :title %>
+    </div>
+
+    <div class="field">
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+    </div>
+
+    <div class="field">
+      <%= form.label :price %><%= "*"%>
+      <%= form.number_field :price, in: 1..99999 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :category %>
+      <%= form.text_field :category %>
+    </div>
+
+    <div class="field">
+      <%= form.label :style %>
+      <%= form.text_field :style %>
+    </div>
+
+    <br>
+
+    <div class="actions upload_button">
+      <%= form.submit %>
+    </div>
+
+    <br>
+
   <% end %>
 
-  <div class="field">
-    <%= form.label :image %><%= "*"%>
-    <%= form.file_field :image, accept: 'image/png, image/jpg, image/jpeg, image/webp' %>
-  </div>
-
-  <div class="field">
-    <%= form.label :title %><%= "*"%>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :price %><%= "*"%>
-    <%= form.number_field :price, in: 1..99999 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :category %>
-    <%= form.text_field :category %>
-  </div>
-
-  <div class="field">
-    <%= form.label :style %>
-    <%= form.text_field :style %>
-  </div>
-
-  <br>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-
-  <br>
-
-<% end %>
+</section>

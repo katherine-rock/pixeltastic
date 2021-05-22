@@ -3,9 +3,9 @@
 <h1 class="page_title">Image Catalogue</h1>
 
 <section class="main">
-    <div class="row">
       <% @photos.each do | photo | %> 
       <div class="card" style="width: 18rem;">
+
           <%= image_tag photo.image, class: "card-img-top" %>
 
           <div class="card-body">
@@ -36,7 +36,6 @@
   <% end %>
 <% end %>
 
-    </div>
     </div>
     </div>
 

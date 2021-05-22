@@ -1,4 +1,4 @@
-<h1>Portfolio</h1>
+<h1 class="page_title">Portfolio</h1>
 
 <% if !user_signed_in? %>
     <p>You need to be logged in to view your portfolio. Please log in or sign up below.</p>
@@ -12,12 +12,10 @@
 
     <% else %>  
 
-    <section class="card_catalogue">
+<section class="main">
     <% @portfolio.each do | photo | %> 
     <div class="card" style="width: 18rem;">
-        <div class=”card-img-top”>
-        <%= image_tag photo.image %>
-        </div>
+        <%= image_tag photo.image, class: "card-img-top" %>
         <div class="card-body">
             <strong>Title: </strong><%= photo.title %>
             <br>
@@ -29,6 +27,7 @@
             <br>
             <strong>Price: $</strong><%= photo.price %>
             <br>
+
         <button type="button" class="btn btn-primary">
             <%= link_to 'View Details', photo %>
         </button>
@@ -43,13 +42,15 @@
         <button type="button" class="btn btn-primary">
             <%= link_to 'Delete', photo, method: :delete, data: { confirm: 'Are you sure? This action is permanent.' } %>
         </button>
-<% end %>
-
         </div>
-
+    <% end %>
     </div>
-    </section>
-
+    
+    </div>
     <% end %>
 
-<% end %>
+    </div>
+
+    <% end %>
+    </div>
+    </section>
