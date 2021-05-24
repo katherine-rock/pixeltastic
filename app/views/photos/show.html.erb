@@ -32,7 +32,13 @@
 
   <br>
 
+ <% if user_signed_in? %>
     <button type="button" id="checkout-button" class="btn btn-info">Buy Now</button>
+    <% else %>
+    <button type="button" class="btn btn-info">
+      <%= link_to 'Log In to Buy', new_user_session_path %>
+      </button>
+<% end %>
 
   <% if user_signed_in? %>
     <% if @photo.user_id == current_user.id %>

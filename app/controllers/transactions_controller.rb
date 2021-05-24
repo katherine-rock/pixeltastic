@@ -20,7 +20,6 @@ class TransactionsController < ApplicationController
             success_url: rails_blob_url(photo.image, disposition: "attachment"),
             cancel_url: photos_url,
         })
-
         render json: { id: session.id }
     end
 
