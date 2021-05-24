@@ -17,13 +17,11 @@ class TransactionsController < ApplicationController
                 quantity: 1,
             }],
             mode: 'payment',
-            success_url: checkout_success_url,
+            success_url: rails_blob_url(photo.image, disposition: "attachment"),
             cancel_url: photos_url,
         })
 
         render json: { id: session.id }
     end
 
-    def success
-    end
 end
