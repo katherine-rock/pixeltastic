@@ -37,12 +37,14 @@ may want to include sample text in input fields %>
 
     <div class="field">
       <%= form.label :category %>
-      <%= form.text_field :category %>
+      <%= form.select :category,
+      %w( Landscape Wildlife Nature Architecture Portrait Travel Other) %>
     </div>
 
     <div class="field">
       <%= form.label :style %>
-      <%= form.text_field :style %>
+      <%= form.select :style,
+     ["Colour", "Black & White" ] %>
     </div>
 
     <br>
