@@ -1,5 +1,5 @@
 class TransactionsController < ApplicationController
-    skip_before_action :verify_authenticity_token, only: [:create]
+    skip_before_action :verify_authenticity_token, only: [:create, :webhook]
 
     def create
         photo = Photo.find params["id"]
@@ -21,6 +21,14 @@ class TransactionsController < ApplicationController
             cancel_url: photos_url,
         })
         render json: { id: session.id }
+    end
+
+    def webhook
+        transaction_id= params[:data][:object][:payment_intent]
+        transaction = Stripe::PaymentIntent.retrieve(transaction_id)
+        photo_id = transaction.metadata.photo_id
+        user_id = transaction.metadata.user_id
+        render plain: "Success"
     end
 
 end

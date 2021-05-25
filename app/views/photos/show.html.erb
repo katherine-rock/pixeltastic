@@ -30,6 +30,11 @@
     <%= @photo.style %>
   </p>
 
+  <p>
+    <strong>Date Added:</strong>
+    <%= @photo.created_at.strftime("%d/%m/%Y") %>
+  </p>
+
   <br>
 
  <% if user_signed_in? %>

@@ -49,20 +49,25 @@ header h1 {
     padding: 0em 0em .2em 0em;
 }
 
-// display of user email at top of page
-.log_status {
-    margin: 0 2em;
-    float: right;
-    margin-bottom: .5em;
+// alert and notice display
+.alert, .notice {
+    margin: 0 3em;
 }
 
+// display of user email at top of page
 .log_status p {
     margin: 0;
 }
 
+.log_status {
+    margin: 0 30%;
+    float: right;
+    margin-bottom: .5em;
+}
+
 // welcome message on home page
 .welcome, .help_text, .portfolio_text {
-    margin: 1em 2em;
+    margin: 1em 4em;
 }
 
 .main {
@@ -81,12 +86,16 @@ header h1 {
 }
 
 // button to view more photos on home screen - links to index
-.button_view_all, .upload_button, .back_button {
+.button_view_all, .upload_button, .back_button, .grouped_buttons {
     display: flex;
     align-self: center;
     margin: auto;
     justify-content: center;
     color: white;
+}
+
+.grouped_buttons button {
+    margin: 0 1em;
 }
 
 // Image upload form 
@@ -184,7 +193,7 @@ nav .btn-primary {
 
     .log_status {
         float: right;
-        margin: 0 2em;
+        margin: 0 6em;
         display: inline-flex;
     }
 
@@ -225,7 +234,7 @@ nav .btn-primary {
     }
 
     .welcome, .help_text {
-        margin: 1em 8em;
+        margin: 1em 15%;
     }
 
     .show_page {
