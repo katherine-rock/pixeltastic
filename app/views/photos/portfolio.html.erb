@@ -11,6 +11,14 @@
             <%= link_to 'Sign Up', new_user_registration_path %>
         </button>
 
+    <% elsif user_signed_in? && !@portfolio.exists? %>  
+
+        <p>Sorry! You do not have any photos in your portfolio.</p>
+        <p>Please click the button below to start adding photos to your portfolio.</p>
+        <button type="button" class="btn btn-primary">
+            <%= link_to 'Upload a New Photo', new_photo_path %>
+        </button>
+
     <% else %>  
 
     <section class="main">

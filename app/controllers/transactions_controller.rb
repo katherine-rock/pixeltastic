@@ -21,6 +21,7 @@ class TransactionsController < ApplicationController
             cancel_url: photos_url,
         })
         render json: { id: session.id }
+
     end
 
     def webhook
@@ -29,6 +30,10 @@ class TransactionsController < ApplicationController
         photo_id = transaction.metadata.photo_id
         user_id = transaction.metadata.user_id
         render plain: "Success"
+    end
+
+    def transaction_params
+        params.require(:transaction).permit(:id, :seller_id, :buyer_id, :photo_id, :amount, :photo)
     end
 
 end
