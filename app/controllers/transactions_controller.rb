@@ -1,6 +1,7 @@
 class TransactionsController < ApplicationController
     skip_before_action :verify_authenticity_token, only: [:create, :webhook]
 
+    # Stripe payment checkout session, automatically downloads image if payment is successful
     def create
         photo = Photo.find params["id"]
         session = Stripe::Checkout::Session.create({
@@ -24,6 +25,7 @@ class TransactionsController < ApplicationController
 
     end
 
+    # Webhook set up through Ultrahook to track if checkout session was completed. Results an be accessed through Stripe dashboard.
     def webhook
         transaction_id= params[:data][:object][:payment_intent]
         transaction = Stripe::PaymentIntent.retrieve(transaction_id)

@@ -1,15 +1,14 @@
 class PhotosController < ApplicationController
-    # Replace xxxx with model name, lowercase to retrieve record to show, edit or delete
-    # Need to ensure set_xxxx is defined - found in private methods 
     before_action :set_photo, only: %i[ show edit update destroy ]
     before_action :authenticate_user!, only: %i[ new create edit update destroy ]
     rescue_from Pundit::NotAuthorizedError, with: :unauthorised 
 
+    # Alert message if user attempts to edit or delete another users image
     def unauthorised
         flash[:alert] = "Sorry! You do not have access to do that. If you believe this is an error, please report the issue via the help page."
         redirect_to photos_path
     end
-    # Lists all instances of the class 'Xyz'
+    # Method to list all photos 
     # Added query to display most recently added photos first 
     def index
         @photos = Photo.all.order(:created_at).reverse_order
@@ -19,6 +18,7 @@ class PhotosController < ApplicationController
     def show
     end
 
+    # Added Pundit authorisation so users can only edit their own photos
     def edit
         authorize @photo
     end
@@ -31,7 +31,7 @@ class PhotosController < ApplicationController
         end
     end
 
-    # To create new instance of the model
+    # To create new instance of the photo model
     def new
         @photo = Photo.new 
     end
@@ -52,7 +52,7 @@ class PhotosController < ApplicationController
         end
     end
 
-    # To update model 
+    # To update photo listing  
     def update
         respond_to do |format|
             if @photo.update(photo_params)
@@ -65,7 +65,7 @@ class PhotosController < ApplicationController
         end
     end
 
-    # To delete an instance of the class or model photo
+    # To delete an instance of a photo listing 
     def destroy
         authorize @photo
         @photo.destroy

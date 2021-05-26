@@ -3,43 +3,40 @@
 <h1 class="page_title">Image Catalogue</h1>
 
 <section class="main">
-      <% @photos.each do | photo | %> 
-      <div class="card" style="width: 18rem;">
+  <% @photos.each do | photo | %> 
+  <div class="card" style="width: 18rem;">
 
-          <%= image_tag photo.image, class: "card-img-top" %>
+      <%= image_tag photo.image, class: "card-img-top" %>
 
-          <div class="card-body">
-            <strong>Title: </strong><%= photo.title %>
-            <br>
-            <% if photo.category? %>
-            <strong>Category: </strong><%= photo.category %>
-            <% else %>
-            <&nbsp;;>
-            <% end %>
-            <br>
-            <strong>Price: $</strong><%= photo.price %>
-            <br>
+      <div class="card-body">
+        <strong>Title: </strong><%= photo.title %>
+        <br>
+        <% if photo.category? %>
+        <strong>Category: </strong><%= photo.category %>
+        <% else %>
+        <&nbsp;;>
+        <% end %>
+        <br>
+        <strong>Price: $</strong><%= photo.price %>
+        <br>
 
-          <button type="button" class="btn btn-primary">
-            <%= link_to 'Learn More', photo %>
-          </button>
-
-<% if user_signed_in? %>
-  <% if photo.user_id == current_user.id %>
       <button type="button" class="btn btn-primary">
-      <%= link_to 'Edit', edit_photo_path(photo) %>
-    </button>
-    
-        <button type="button" class="btn btn-primary">
-          <%= link_to 'Delete', photo, method: :delete, data: { confirm: 'Are you sure? This action is permanent.' } %>
-        </button>
-  <% end %>
-<% end %>
+        <%= link_to 'Learn More', photo %>
+      </button>
 
-    </div>
-    </div>
-
-<% end %>
-
+      <% if user_signed_in? %>
+        <% if photo.user_id == current_user.id %>
+            <button type="button" class="btn btn-primary">
+              <%= link_to 'Edit', edit_photo_path(photo) %>
+            </button>
+          
+            <button type="button" class="btn btn-primary">
+              <%= link_to 'Delete', photo, method: :delete, data: { confirm: 'Are you sure? This action is permanent.' } %>
+            </button>
+        <% end %>
+      <% end %>
+      </div>
   </div>
+
+  <% end %>
 </section>

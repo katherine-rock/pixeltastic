@@ -1,40 +1,38 @@
 <section class="welcome">
     <h2>Welcome to Pixeltastic!</h2>
-    <p>An easy to use, stock photography website for creative photographers to sell their photos.</p>
+    <h4>An easy to use, stock photography website to buy and sell creative photographs.</h4>
+    <br>
     <p>Here are the latest additions to our collection.</p>
 </section>
 
 <section class="main">
-        <% @photos.each do | photo | %>
-            <div class="card" style="width: 18rem;">
-            <%= image_tag photo.image, class: "card-img-top" %>
+    <% @photos.each do | photo | %>
+        <div class="card" style="width: 18rem;">
+        <%= image_tag photo.image, class: "card-img-top" %>
 
-            <div class="card-body">
-                <strong>Title: </strong><%= photo.title %>
-                <br>
-                <% if photo.category? %>
-                <strong>Category: </strong><%= photo.category %>
-                <% else %>
-                <&nbsp;;>
-                <% end %>
-                <br>
-                <strong>Price: $</strong><%= photo.price %>
-                <br>
+        <div class="card-body">
+            <strong>Title: </strong><%= photo.title %>
+            <br>
+            <% if photo.category? %>
+            <strong>Category: </strong><%= photo.category %>
+            <% else %>
+            <&nbsp;;>
+            <% end %>
+            <br>
+            <strong>Price: $</strong><%= photo.price %>
+            <br>
 
-            <button type="button" class="btn btn-primary">
-                <%= link_to 'Learn More', photo %>
-            </button>
+        <button type="button" class="btn btn-primary">
+            <%= link_to 'Learn More', photo %>
+        </button>
 
-                </div>
-
-    </div>  
+        </div>
+        </div>  
     <% end %>  
-</div>
-
 </section>
 
 <div class="button_view_all">
     <button type="button" class="btn btn-warning">
-    <%= link_to 'View More Photos', photos_path %>
+        <%= link_to 'View More Photos', photos_path %>
     </button>
 </div>

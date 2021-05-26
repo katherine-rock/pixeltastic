@@ -1,6 +1,7 @@
 <h1 class="page_title">Portfolio</h1>
 
 <section class="portfolio_text">
+
     <% if !user_signed_in? %>
         <p>You need to be logged in to view your portfolio. Please log in or sign up below.</p>
         <button type="button" class="btn btn-primary">
@@ -12,7 +13,6 @@
         </button>
 
     <% elsif user_signed_in? && !@portfolio.exists? %>  
-
         <p>Sorry! You do not have any photos in your portfolio.</p>
         <p>Please click the button below to start adding photos to your portfolio.</p>
         <button type="button" class="btn btn-primary">
@@ -20,46 +20,42 @@
         </button>
 
     <% else %>  
+        <section class="main">
+            <% @portfolio.each do | photo | %> 
+            <div class="card" style="width: 18rem;">
+                <%= image_tag photo.image, class: "card-img-top" %>
+                
+                <div class="card-body">
+                    <strong>Title: </strong><%= photo.title %>
+                    <br>
+                    <% if photo.category? %>
+                    <strong>Category: </strong><%= photo.category %>
+                    <% else %>
+                    <&nbsp;;>
+                    <% end %>
+                    <br>
+                    <strong>Price: $</strong><%= photo.price %>
+                    <br>
 
-    <section class="main">
-        <% @portfolio.each do | photo | %> 
-        <div class="card" style="width: 18rem;">
-            <%= image_tag photo.image, class: "card-img-top" %>
-            <div class="card-body">
-                <strong>Title: </strong><%= photo.title %>
-                <br>
-                <% if photo.category? %>
-                <strong>Category: </strong><%= photo.category %>
-                <% else %>
-                <&nbsp;;>
+                <button type="button" class="btn btn-primary">
+                    <%= link_to 'View Details', photo %>
+                </button>
+
+                <% if photo.user_id == current_user.id %>
+                    <button type="button" class="btn btn-primary">
+                    <%= link_to 'Edit', edit_photo_path(photo) %>
+                    </button>
+
+                    <button type="button" class="btn btn-primary">
+                        <%= link_to 'Delete', photo, method: :delete, data: { confirm: 'Are you sure? This action is permanent.' } %>
+                    </button>
+                    </div>
                 <% end %>
-                <br>
-                <strong>Price: $</strong><%= photo.price %>
-                <br>
-
-            <button type="button" class="btn btn-primary">
-                <%= link_to 'View Details', photo %>
-            </button>
-
-        <% if photo.user_id == current_user.id %>
-            <button type="button" class="btn btn-primary">
-            <%= link_to 'Edit', edit_photo_path(photo) %>
-            </button>
-        <% end %>
-
-        <% if photo.user_id == current_user.id %>
-            <button type="button" class="btn btn-primary">
-                <%= link_to 'Delete', photo, method: :delete, data: { confirm: 'Are you sure? This action is permanent.' } %>
-            </button>
+                </div>
+        
             </div>
-        <% end %>
+            <% end %>
+
         </div>
-    
-    </div>
+        </section>
     <% end %>
-
-    </div>
-
-    <% end %>
-    </div>
-    </section>

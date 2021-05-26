@@ -39,10 +39,10 @@
 
  <% if user_signed_in? %>
     <button type="button" id="checkout-button" class="btn btn-info">Buy Now</button>
-    <% else %>
+  <% else %>
     <button type="button" class="btn btn-info">
       <%= link_to 'Log In to Buy', new_user_session_path %>
-      </button>
+    </button>
 <% end %>
 
   <% if user_signed_in? %>
@@ -53,7 +53,6 @@
     <% end %>
   <% end %>
 
-  <%# Original back button which goes to image catalogue/index %>
   <button type="button" class="btn btn-info">
     <%= link_to 'Back', photos_path %>
   </button>
@@ -61,6 +60,7 @@
   <br>
 </section>
 
+<%# Stripe checkout button %>
 <script type="text/javascript">
   // Create an instance of the Stripe object with your publishable API key
   var stripe = Stripe("<%= Rails.application.credentials.dig(:stripe, :public_key) %>");
