@@ -26,7 +26,7 @@
                 <%= image_tag photo.image, class: "card-img-top" %>
                 
                 <div class="card-body">
-                    <strong>Title: </strong><%= photo.title %>
+                    <strong>Title: </strong><%= sanitize(photo.title) %>
                     <br>
                     <% if photo.category? %>
                     <strong>Category: </strong><%= photo.category %>

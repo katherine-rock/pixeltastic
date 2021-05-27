@@ -3,7 +3,7 @@
   <p id="notice"><%= notice %></p>
 
   <h1>
-    <%= @photo.title %>
+    <%= sanitize(@photo.title) %>
   </h1>
 
   <p>
@@ -12,7 +12,7 @@
 
   <p>
     <strong>Description:</strong>
-    <%= @photo.description %>
+    <%= sanitize(@photo.description) %>
   </p>
 
   <p>

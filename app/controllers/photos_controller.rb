@@ -11,7 +11,7 @@ class PhotosController < ApplicationController
     # Method to list all photos 
     # Added query to display most recently added photos first 
     def index
-        @photos = Photo.all.order(:created_at).reverse_order
+        @photos = Photo.order(:created_at).reverse_order
     end 
  
     # Need to include although there is no method defined - needed for view to retrieve form    
