@@ -26,12 +26,14 @@ A stock photography website that allows sellers to set the prices for each of th
 
 ### Website Link (R9) ###
 The deployed application is available at:
+
 https://pixeltastic.herokuapp.com/
 
 Please note you will need to create an account and log in to access all the features of the app. You will be able to view the home page, image catalogue and help page without creating an account. 
 
 ### GitHub repository (R10) ###
 The source code for the application can be found on GitHub at:
+
 https://github.com/katherine-rock/pixeltastic
 
 ### Overview of the marketplace app (R11) ###
@@ -54,11 +56,28 @@ The following features will be added to future releases:
 * Public user portfolios
 
 #### Sitemap ####
-[Link to sitemap png file]
+![stock photography app site map](docs/sitemap_marketplace_app.png)
 
 #### Screenshots ####
-[link to screenshots]
-Also include labels
+Home
+![stock photography app home page](docs/pixeltastic.herokuapp.com_home_page.png)
+
+View Photo Listing
+![stock photography app show page](docs/pixeltastic.herokuapp.com_show.png)
+
+View Image Catalogue
+![stock photography app catalogue page](docs/pixeltastic.herokuapp.com_catalogue.png)
+Please note the user portfolio page follows the same layout as the image catalogue page. 
+
+Upload New Photo 
+![stock photography app add new photo page](docs/pixeltastic.herokuapp.com_upload_new.png)
+
+Upload New Photo 
+![stock photography app sign up page](docs/pixeltastic.herokuapp.com_sign_up.png)
+Please note the log in and log out pages follow the same layout as the sign up page. 
+
+Help 
+![stock photography app help page](docs/pixeltastic.herokuapp.com_help.png)
 
 #### Target audience ####
 The target audience for the Pixeltastic marketplace app is professional and hobby photographers looking to sell their creative photos, and people looking to buy creative photos for personal or professional use. 
@@ -116,12 +135,22 @@ Wireframes were prepared with a minimalist design in mind so the application lay
 
 The initial wireframes for mobile and tablet did not include images on the home page as it was thought this would require too much scrolling for the user to access the main features of the app. During the build phase it became obvious that including a limited number of images resulted in a more engaging design and did not add significantly to the amount of work for users to access the app’s features.  
 
-[URL to wireframes]
+Home
+![stock photography wireframe for home page](docs/Wireframe_Home_page.png)
+
+Image Catalogue
+![stock photography wireframe for index page](docs/Wireframe_Image_Catalogue.png)
+
+Upload New Photo
+![stock photography wireframe for index page](docs/Wireframe_Upload_new_image.png)
+
+View Photo
+![stock photography wireframe for index page](docs/Wireframe_View_image_listing.png)
 
 ### Entity Relationship Diagram and Database Schema Design (R14, R19) ###
 The entities within the app are summarised by the following diagram. These entities are explained in more detail below. Please note that ‘created_at’ and ‘updated_at’ are included as columns for each table but are not included in the diagram below to reduce repetition.  
 
-[Link to ERD]
+![stock photography entity relationship diagram](docs/Pixeltastic_ERD.png)
 
 ### Database relations (R18) ###
 As per the entity relationship diagram above, the data for the application is organised by user, photo listing, transactions between users to sell/purchase photos, and data associated with storage of the photos. 
@@ -149,9 +178,13 @@ A real-life marketplace would involve the exchange of a photo for money. This is
 ### Third-party services used by the app (R16) ###
 The following third-party services have been used by the app. 
 __Heroku__ has been used to deploy the application. Heroku provides a cloud-based platform for developers to deploy and manage apps. (Heroku, 2021)
+
 __GitHub__ has been used for version control and to integrate with Heroku for deployment. (Heroku, 2020) 
+
 __Amazon Web Services S3__ has been used for remote storage of images. Amazon S3 can store large amounts of data to be accessed from anywhere. It is fast, highly reliable and inexpensive. (Amazon, 2021)
-__Stripe__ has been used to process credit card payments securely online. Stripe provides a pre-built checkout page which creates a checkout session to process payments and then re-direct users back to the marketplace app. (Stripe, 2021).  
+
+__Stripe__ has been used to process credit card payments securely online. Stripe provides a pre-built checkout page which creates a checkout session to process payments and then re-direct users back to the marketplace app. (Stripe, 2021). 
+ 
 __Ultrahook__ has been used to provide a webhook from Stripe once each payment checkout session is completed. (Ultrahook, 2021)
 
 ### Project models, relationships and associations (R17) ###
@@ -198,8 +231,9 @@ This list included an overall project schedule with one or two key items for eac
 #### Issues Logs ####
 During the building and deployment phase, 2 checklists were added to the Trello board to keep track of new issues as they arose, one for major issues impacting the functionality of the app to be addressed on a priority basis, and one for minor issues that do not have a significant impact on the functionality of the app and can be addressed at a later time. 
 
-[Screenshots of Trello board]
-
+![screenshot of Trello board](docs/Trello_1.png)
+![screenshot of Trello board](docs/Trello_2.png)
+![screenshot of Trello board](docs/Trello_3.png)
 ### References ###
 
 Amazon, 2021. What is Amazon S3?. [Online] 
