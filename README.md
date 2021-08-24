@@ -2,6 +2,8 @@
 
 ## Pixeltastic – Stock Photography Website Application ##
 
+![stock photography app home page thumbnail](docs/Pixeltastic_thumbnail_home.png)
+
 ### What is the problem you are trying to solve by building this particular marketplace app? (R7) ###
 
 Stock photography websites allow photographers to sell their images to many potential buyers while providing buyers the opportunity to choose from many images from many different photographers. 
